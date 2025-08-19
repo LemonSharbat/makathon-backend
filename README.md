@@ -1,2 +1,2 @@
 # Team-Incode
-rural waste management project
+Rural waste management project
