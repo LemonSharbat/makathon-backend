@@ -150,7 +150,7 @@ export default function LeaderboardPage() {
                   </div>
 
                   {/* Action Button */}
-                  <div className="flex flex-col items-center gap-2">
+                  {/* <div className="flex flex-col items-center gap-2">
                     <Button asChild size="sm" variant="outline">
                       <Link href={`/panchayat/dashboard?pid=${panchayat.id}`}>
                         <ExternalLink className="h-4 w-4 mr-2" />
@@ -160,7 +160,7 @@ export default function LeaderboardPage() {
                     <div className="text-xs text-muted-foreground text-center">
                       {panchayat.totalComplaints} total complaints
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </CardContent>
             </Card>
