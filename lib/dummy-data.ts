@@ -18,6 +18,17 @@ export interface Worker {
   email: string
 }
 
+export interface PanchayatPerformance {
+  id: string
+  name: string
+  location: string
+  resolvedCount: number
+  unaddressedCount: number
+  totalComplaints: number
+  resolutionRate: number
+  averageResolutionTime: number // in days
+}
+
 export const dummyWorkers: Worker[] = [
   { id: "1", name: "Rajesh Kumar", email: "rajesh@waste.gov" },
   { id: "2", name: "Priya Sharma", email: "priya@waste.gov" },
@@ -81,6 +92,69 @@ export const dummyComplaints: Complaint[] = [
     assignedWorker: "Priya Sharma",
     createdAt: new Date("2024-01-14"),
     deadline: new Date("2024-01-19"),
+  },
+]
+
+export const dummyPanchayatPerformance: PanchayatPerformance[] = [
+  {
+    id: "1",
+    name: "Surathkal Panchayat",
+    location: "Surathkal",
+    resolvedCount: 45,
+    unaddressedCount: 12,
+    totalComplaints: 57,
+    resolutionRate: 78.9,
+    averageResolutionTime: 4.2,
+  },
+  {
+    id: "2",
+    name: "Mulki Panchayat",
+    location: "Mulki",
+    resolvedCount: 38,
+    unaddressedCount: 8,
+    totalComplaints: 46,
+    resolutionRate: 82.6,
+    averageResolutionTime: 3.8,
+  },
+  {
+    id: "3",
+    name: "Ullal Panchayat",
+    location: "Ullal",
+    resolvedCount: 52,
+    unaddressedCount: 18,
+    totalComplaints: 70,
+    resolutionRate: 74.3,
+    averageResolutionTime: 5.1,
+  },
+  {
+    id: "4",
+    name: "Moodbidri Panchayat",
+    location: "Moodbidri",
+    resolvedCount: 41,
+    unaddressedCount: 6,
+    totalComplaints: 47,
+    resolutionRate: 87.2,
+    averageResolutionTime: 3.2,
+  },
+  {
+    id: "5",
+    name: "Bantwal Panchayat",
+    location: "Bantwal",
+    resolvedCount: 29,
+    unaddressedCount: 15,
+    totalComplaints: 44,
+    resolutionRate: 65.9,
+    averageResolutionTime: 6.3,
+  },
+  {
+    id: "6",
+    name: "Puttur Panchayat",
+    location: "Puttur",
+    resolvedCount: 35,
+    unaddressedCount: 9,
+    totalComplaints: 44,
+    resolutionRate: 79.5,
+    averageResolutionTime: 4.7,
   },
 ]
 

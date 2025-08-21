@@ -1,67 +1,88 @@
 "use client"
-import { Card } from "@/components/ui/card"
-import { Users, Briefcase, Shield } from "lucide-react"
 
-interface NavigationPropsType {
-  currentInterface: "citizen" | "worker" | "panchayat"
-  onInterfaceChange: (interfaceType: "citizen" | "worker" | "panchayat") => void
-}
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { Home, FileText, Wrench, Building2, Trophy } from "lucide-react"
 
-export function Navigation({ currentInterface, onInterfaceChange }: NavigationPropsType) {
-  const interfaces = [
-    {
-      id: "citizen" as const,
-      name: "Citizen Portal",
-      description: "Report waste issues in your area",
-      icon: Users,
-    },
-    {
-      id: "worker" as const,
-      name: "Worker Dashboard",
-      description: "Manage assigned cleanup tasks",
-      icon: Briefcase,
-    },
-    {
-      id: "panchayat" as const,
-      name: "Panchayat Admin",
-      description: "Monitor and manage all reports",
-      icon: Shield,
-    },
+export function Navigation() {
+  const pathname = usePathname()
+
+  const navItems = [
+    { href: "/", label: "Home", icon: Home },
+    { href: "/citizen", label: "Citizen Report", icon: FileText },
+    { href: "/worker/login", label: "Worker", icon: Wrench },
+    { href: "/panchayat/login", label: "Panchayat", icon: Building2 },
+    { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
   ]
 
   return (
-    <div className="w-full bg-background border-b">
-      <div className="container mx-auto px-4 py-6">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Waste Management System</h1>
-          <p className="text-muted-foreground">Keeping our community clean and sustainable</p>
+    <nav className="border-b bg-card sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+            THUDAR
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => {
+              const Icon = item.icon
+              const isActive =
+                pathname === item.href ||
+                (item.href.includes("/worker") && pathname.startsWith("/worker")) ||
+                (item.href.includes("/panchayat") && pathname.startsWith("/panchayat"))
+
+              return (
+                <Button
+                  key={item.href}
+                  asChild
+                  variant={isActive ? "default" : "ghost"}
+                  size="sm"
+                  className="flex items-center gap-2"
+                >
+                  <Link href={item.href}>
+                    <Icon className="h-4 w-4" />
+                    {item.label}
+                  </Link>
+                </Button>
+              )
+            })}
+          </div>
+
+          <div className="md:hidden">
+            <Button variant="ghost" size="sm">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </Button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {interfaces.map((interfaceItem) => {
-            const Icon = interfaceItem.icon
-            const isActive = currentInterface === interfaceItem.id
+        <div className="md:hidden mt-4 space-y-2">
+          {navItems.map((item) => {
+            const Icon = item.icon
+            const isActive =
+              pathname === item.href ||
+              (item.href.includes("/worker") && pathname.startsWith("/worker")) ||
+              (item.href.includes("/panchayat") && pathname.startsWith("/panchayat"))
 
             return (
-              <Card
-                key={interfaceItem.id}
-                className={`p-6 cursor-pointer transition-all hover:shadow-lg ${
-                  isActive ? "bg-primary text-primary-foreground border-primary" : "bg-card hover:bg-accent"
-                }`}
-                onClick={() => onInterfaceChange(interfaceItem.id)}
+              <Button
+                key={item.href}
+                asChild
+                variant={isActive ? "default" : "ghost"}
+                size="sm"
+                className="w-full justify-start gap-2"
               >
-                <div className="flex flex-col items-center text-center space-y-3">
-                  <Icon className="h-8 w-8" />
-                  <h3 className="font-semibold text-lg">{interfaceItem.name}</h3>
-                  <p className={`text-sm ${isActive ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                    {interfaceItem.description}
-                  </p>
-                </div>
-              </Card>
+                <Link href={item.href}>
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                </Link>
+              </Button>
             )
           })}
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
