@@ -21,7 +21,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
-            THUDAR
+            TUDAR
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">

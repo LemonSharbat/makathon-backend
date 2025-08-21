@@ -56,7 +56,7 @@ export default function WorkerSignupPage() {
             <Wrench className="h-8 w-8 text-green-600" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">Worker Registration</h1>
-          <p className="text-muted-foreground mt-2">Join the THUDAR cleanup team</p>
+          <p className="text-muted-foreground mt-2">Join the TUDAR cleanup team</p>
         </div>
 
         <Card>

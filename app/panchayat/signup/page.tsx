@@ -77,7 +77,7 @@ export default function PanchayatSignupPage() {
             <Building2 className="h-8 w-8 text-purple-600" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">Panchayat Registration</h1>
-          <p className="text-muted-foreground mt-2">Register your Panchayat with THUDAR</p>
+          <p className="text-muted-foreground mt-2">Register your Panchayat with TUDAR</p>
         </div>
 
         <Card>

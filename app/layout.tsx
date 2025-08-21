@@ -7,7 +7,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "THUDAR - Waste Reporting System",
+  title: "TUDAR - Waste Reporting System",
   description: "Citizen-led waste reporting platform for Mangalore and nearby towns",
   generator: "v0.app",
 }

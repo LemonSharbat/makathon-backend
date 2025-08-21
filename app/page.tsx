@@ -12,7 +12,7 @@ export default function LandingPage() {
       <section className="py-20 px-4 text-center bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            <span className="text-primary">THUDAR</span>
+            <span className="text-primary">TUDAR</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Citizen-led waste reporting platform for cleaner communities
@@ -33,7 +33,7 @@ export default function LandingPage() {
       {/* Feature Cards */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">How THUDAR Works</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">How TUDAR Works</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Citizen Card */}
@@ -111,21 +111,21 @@ export default function LandingPage() {
       {/* About Section */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-8">About THUDAR</h2>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-8">About TUDAR</h2>
           <div className="prose prose-lg mx-auto text-center space-y-6">
             <p className="text-muted-foreground">
-              THUDAR empowers communities to take charge of their cleanliness by providing a simple, effective platform
+              TUDAR empowers communities to take charge of their cleanliness by providing a simple, effective platform
               for reporting and managing waste issues. Our system connects citizens, workers, and local authorities in a
               coordinated effort to maintain clean neighborhoods.
             </p>
             <p className="text-muted-foreground">
-              With real-time reporting, photo documentation, and progress tracking, THUDAR ensures transparency and
+              With real-time reporting, photo documentation, and progress tracking, TUDAR ensures transparency and
               accountability in waste management. Join thousands of users across Mangalore and nearby towns who are
               making a difference, one report at a time.
             </p>
             <p className="text-muted-foreground">
               Whether you're reporting an overflowing bin, tracking cleanup progress, or analyzing waste patterns,
-              THUDAR provides the tools needed to build cleaner, healthier communities for everyone.
+              TUDAR provides the tools needed to build cleaner, healthier communities for everyone.
             </p>
           </div>
         </div>
