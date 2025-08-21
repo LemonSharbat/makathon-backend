@@ -12,7 +12,7 @@ export default function LandingPage() {
       <section className="py-20 px-4 text-center bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            <span className="text-primary">THUDAR</span>
+            <span className="text-primary">TUDAR</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Citizen-led waste reporting platform for cleaner communities
