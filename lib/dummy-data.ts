@@ -180,14 +180,14 @@ export const getStatusCounts = () => {
 export const getFrequentDumpingSpots = () => {
   const locations = dummyComplaints.reduce(
     (acc, complaint) => {
-      acc[complaint.location] = (acc[complaint.location] || 0) + 1
-      return acc
+      acc[complaint.location] = (acc[complaint.location] || 0) + 1;
+      return acc;
     },
-    {} as Record<string, number>,
-  )
-
-  return Object.entries(locations)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, 5)
-    .map(([location, count]) => ({ location, count }))
-}
+    {} as Record<string, number>
+  );
+  // Convert the object to an array of { location, count }
+  return Object.entries(locations).map(([location, count]) => ({
+    location,
+    count,
+  }));
+};
